@@ -2,138 +2,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Classroom</title>
-  <link rel="icon" href="Icon.jpeg">
+  <link rel="icon" href="../Icon.jpeg"> <!-- Use relative path to go up one directory -->
 
   <!-- Importing the Noto Sans font -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100&display=swap" rel="stylesheet">
   <style>
-  body {
-  font-family: 'Noto Sans', sans-serif;
-  margin: 0;
-  background-color: white;
-  color: black;
-  transition: background-color 0.3s, color 0.3s;
-  text-align: center;
-}
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      margin: 0;
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+      text-align: center;
+    }
 
-body.dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
-}
+    body.dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
 
-#header {
-  display: flex;
-  justify-content: space-between; /* Align logo and dark mode toggle at opposite sides */
-  align-items: center;
-  padding: 20px;
-  background-color: #f8f9fa; /* Light mode header color */
-  border-bottom: none; /* Remove border */
-}
+    #header {
+      display: flex;
+      justify-content: space-between; /* Align logo and dark mode toggle at opposite sides */
+      align-items: center;
+      padding: 20px;
+      background-color: #f8f9fa; /* Light mode header color */
+      border-bottom: none; /* Remove border */
+    }
 
-body.dark-mode #header {
-  background-color: #333; /* Dark mode header color */
-}
+    body.dark-mode #header {
+      background-color: #333; /* Dark mode header color */
+    }
 
-#header .logo-container {
-  flex-grow: 1; /* Allow logo container to take up available space */
-  display: flex;
-  justify-content: center; /* Center the logo */
-}
+    #header .logo-container {
+      flex-grow: 1; /* Allow logo container to take up available space */
+      display: flex;
+      justify-content: center; /* Center the logo */
+    }
 
-#dark-mode-toggle {
-  position: absolute; /* Position dark mode toggle in top-right corner */
-  right: 20px;
-  top: 20px;
-}
+    #dark-mode-toggle {
+      position: absolute; /* Position dark mode toggle in top-right corner */
+      right: 20px;
+      top: 20px;
+    }
 
-.dark-mode-toggle img {
-  width: 100%; /* Set width of the icon */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 40px; /* Ensure it's not too large */
-}
+    .dark-mode-toggle img {
+      width: 100%; /* Set width of the icon */
+      height: auto; /* Maintain aspect ratio */
+      max-width: 40px; /* Ensure it's not too large */
+    }
 
-h1 {
-  text-align: center; /* Center the title text */
-  margin: 0; /* Remove default margin */
-  flex-grow: 1; /* Allow title to take up available space */
-}
+    h1 {
+      text-align: center; /* Center the title text */
+      margin: 0; /* Remove default margin */
+      flex-grow: 1; /* Allow title to take up available space */
+    }
 
-#game-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 20px;
-}
+    #game-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 20px;
+    }
 
-.game-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    .game-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-.game-item:hover {
-  background-color: #f0f0f0;
-}
+    .game-item:hover {
+      background-color: #f0f0f0;
+    }
 
-body.dark-mode .game-item:hover {
-  background-color: #333;
-}
+    body.dark-mode .game-item:hover {
+      background-color: #333;
+    }
 
-.delete-button {
-  margin-left: 10px;
-  padding: 5px 10px;
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
+    .delete-button {
+      margin-left: 10px;
+      padding: 5px 10px;
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
 
-.delete-button:hover {
-  background-color: #c82333;
-}
+    .delete-button:hover {
+      background-color: #c82333;
+    }
 
-#add-button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    #add-button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-#add-button:hover {
-  background-color: #218838;
-}
+    #add-button:hover {
+      background-color: #218838;
+    }
 
-.dark-mode-toggle {
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
+    .dark-mode-toggle {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
 
-#header .logo-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
+    #header .logo-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
 
-h1 {
-  text-align: center;
-  margin-top: 40px;
-}
-#header .logo-container img {
-  max-width: 150px; /* Set the max-width to 150px for the logo */
-  height: auto; /* Maintain aspect ratio */
-}
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+    }
 
-
+    #header .logo-container img {
+      max-width: 150px; /* Set the max-width to 150px for the logo */
+      height: auto; /* Maintain aspect ratio */
+    }
   </style>
 </head>
 
@@ -141,10 +140,10 @@ h1 {
   <!-- Header Section -->
   <div id="header">
     <div class="logo-container">
-      <img class="logo" src="Icon.jpeg" alt="Logo">
+      <img class="logo" src="../Icon.jpeg" alt="Logo"> <!-- Use relative path to go up one directory -->
     </div>
     <button id="dark-mode-toggle" class="dark-mode-toggle">
-      <img id="toggle-icon" src="light.jpg" alt="Toggle Dark Mode">
+      <img id="toggle-icon" src="../light.jpg" alt="Toggle Dark Mode"> <!-- Use relative path for dark mode toggle image -->
     </button>
   </div>
 
@@ -166,15 +165,15 @@ const toggleIcon = document.getElementById("toggle-icon");
 const darkModeEnabled = localStorage.getItem("darkMode") === "true";
 if (darkModeEnabled) {
   document.body.classList.add("dark-mode");
-  toggleIcon.src = "dark.jpg";
+  toggleIcon.src = "../dark.jpg"; // Use relative path for dark mode toggle
 }
 
 darkModeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
   const isDarkMode = document.body.classList.contains("dark-mode");
   toggleIcon.src = isDarkMode
-    ? "dark.jpg"
-    : "light.jpg";
+    ? "../dark.jpg" // Use relative path for dark mode toggle
+    : "../light.jpg"; // Use relative path for light mode toggle
   localStorage.setItem("darkMode", isDarkMode);
 });
 
@@ -276,7 +275,7 @@ function openGameInNewTab(url) {
         </style>
       </head>
       <body>
-        <img src="Icon.jpeg" class="logo" alt="Logo">
+        <img src="../Icon.jpeg" class="logo" alt="Logo"> <!-- Local image -->
         <iframe src="${url}"></iframe>
       </body>
     </html>
@@ -299,7 +298,7 @@ function loadGamesFromStorage() {
   // Clear the list to prevent duplication
   gameList.innerHTML = ''; 
 
-  // Load each game from storage and create the list item
+  <!-- // Load each game from storage and create the list item -->
   games.forEach((game) => {
     const listItem = document.createElement("li");
     listItem.className = "game-item";
@@ -318,8 +317,6 @@ function removeGameFromStorage(url) {
 window.addEventListener('load', () => {
   loadGamesFromStorage();
 });
-
-
   </script>
 </body>
 </html>
