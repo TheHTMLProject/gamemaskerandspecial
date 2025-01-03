@@ -178,7 +178,7 @@ darkModeToggle.addEventListener("click", () => {
 });
 
 addButton.addEventListener("click", () => {
-  const url = prompt("Enter the URL for the game (must support iframe):");
+  const url = prompt("Enter the URL for the game, get it from my site (eg. https://my-site.github.io/whatever-page-is-newest/game.html):");
   if (!url) return;
 
   const listItem = document.createElement("li");
@@ -211,7 +211,7 @@ addButton.addEventListener("click", () => {
 
 function handleError(listItem, url) {
   const fallbackTitle = prompt(
-    "Unable to fetch the title for this URL. Please provide a title:"
+    "Enter a custom title: "
   );
   if (fallbackTitle) {
     createGameItem(listItem, fallbackTitle, url);
