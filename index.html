@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extras - The HTML Project</title>
+    <link rel="icon" href="Icon.jpeg" type="image/jpeg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+        /* Base Light Mode Styles */
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafb;
+            color: #4a4a4a;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header {
+            background-color: #1d3557;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+        header h1 img {
+            width: 35px;
+            height: 35px;
+            margin-right: 12px;
+        }
+
+        /* Header Links in Light Mode */
+        header nav a {
+            color: #f1faee;  /* Light color for visibility in light mode */
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 1rem;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+            padding: 0.5rem;
+        }
+
+        /* Hover effect for header links */
+        header nav a:hover {
+            color: #a8dadc;  /* Lighter hover effect */
+            transform: translateY(-2px);
+        }
+
+        header nav a:active {
+            transform: translateY(2px);
+        }
+
+        header nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #f1faee;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+
+        header nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Body Links Styles (separate from light/dark mode) */
+        .container a, .container p a {
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+        }
+
+        /* Light Mode Body Links */
+        .light-mode .container a, .light-mode .container p a {
+            color: #808080; /* Dark gray for visibility in light mode */
+        }
+
+        /* Hover effect for body links in light mode */
+        .light-mode .container a:hover, .light-mode .container p a:hover {
+            color: #808080;
+            transform: translateY(-2px);
+        }
+
+        .light-mode .container a:active, .light-mode .container p a:active {
+            transform: translateY(2px);
+        }
+
+        .light-mode .container a::after, .light-mode .container p a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #f1faee;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+
+        .light-mode .container a:hover::after, .light-mode .container p a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode header {
+            background-color: #333333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode footer {
+            background-color: #333333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.dark-mode .container {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        body.dark-mode h2 {
+            color: #e63946;
+        }
+
+        body.dark-mode a {
+            color: #ffffff;
+            transition: color 0.3s;
+        }
+
+        body.dark-mode a:hover {
+            color: #808080;
+            transform: scale(1.1);
+        }
+
+        /* Specific Styles for the "Request a new masker page" link in dark mode */
+        .dark-mode .container p a {
+            color: #ffffff; /* Dark blue color for the "Request a new masker page" link */
+        }
+
+        /* Hover effect for the "Request a new masker page" link in dark mode */
+        .dark-mode .container p a:hover {
+            color: #808080;
+            transform: translateY(-2px);
+        }
+
+        .dark-mode .container p a:active {
+            transform: translateY(2px);
+        }
+
+        .dark-mode .container p a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #808080;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+
+        .dark-mode .container p a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 3rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h2 {
+            color: #457b9d;
+            border-bottom: 3px solid #457b9d;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s;
+        }
+
+        .masker-pages button {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            font-size: 1.1rem;
+            background: #2a9d8f;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+        }
+
+        .masker-pages button:hover {
+            background: #3abda6;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(42, 157, 143, 0.4);
+        }
+
+        .masker-pages button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 6px rgba(42, 157, 143, 0.2);
+        }
+
+        /* Footer Links */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #1d3557;
+            color: white;
+            font-size: 0.95rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        footer a:hover {
+            color: #f1faee;
+            transform: translateY(-2px);
+        }
+
+        footer a:active {
+            transform: translateY(2px);
+        }
+
+        footer a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #f1faee;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+
+        footer a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+/* Header Links */
+header nav a.header-option {
+    color: #f1faee;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+    padding: 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+/* Pushed-in effect when the link is pressed */
+header nav a.header-option:active {
+    color: #a8dadc;
+    transform: translateY(2px);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: #457b9d; /* Color when the link is pressed */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="Icon.jpeg" alt="Icon">
+            Extras
+        </h1>
+        <nav>
+         <s> <a href="#" style="pointer-events: none; ">Home</a></s>
+            <a href="dudovo.html">Dud OvO</a>
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATcuH4ZUN1QyVUVFVzJGOVpYQzc3TVlSSlo1WEdBSS4u" target="_blank" rel="noopener noreferrer">Request a Masker Page</a>
+        </nav>
+    </header>
+    <div class="container">
+        <p>This website will automatically mask your games into about:blank windows so that your teacher will see "Google Classroom" or "Google." All you need is the link to the game, from my site or somewhere else. It's super cool! <a href="#">Request a new masker page</a> if you want the tab to say something else besides what is currently provided. Enjoy!</p>
+        <h2>Current Masker Pages</h2>
+        <div class="masker-pages">
+            <button class="btn btn-success" onclick="location.href='/game-masker/google-classroom/';">Google Classroom</button>
+            <button class="btn btn-success" onclick="location.href='/game-masker/google/';">Google</button>
+        </div>
+        <h2>Dud OvO</h2>
+        <p>See the older version, the one before the above idea. If you like OvO, this is for you. <a href="dudovo.html">Click here</a></p>
+    </div>
+    <footer>
+        <p>Made with <span style="color: #e63946;">💚</span> by Asher from The HTML Project</p>
+		<p><a href="/home/">Back to Dashboard</a></p>
+        <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATcuH4ZUN1owVTQ0RzBHMVJVUDlMVUc5MzdaNENHMi4u">Report a bug</a></p>
+    </footer>
+
+    <script>
+        // Check if dark mode is enabled in localStorage
+        if (localStorage.getItem("darkMode") === "true") {
+            enableDarkMode();
+        }
+
+        // Toggle Dark Mode
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
+            body.classList.remove('light-mode');  // Ensure light mode is not active
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem("darkMode", "true");
+            } else {
+                localStorage.setItem("darkMode", "false");
+            }
+        }
+
+        // Enable Dark Mode
+        function enableDarkMode() {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Toggle Light Mode
+        function toggleLightMode() {
+            const body = document.body;
+            body.classList.toggle('light-mode');
+            body.classList.remove('dark-mode');  // Ensure dark mode is not active
+            if (body.classList.contains('light-mode')) {
+                localStorage.setItem("lightMode", "true");
+            } else {
+                localStorage.setItem("lightMode", "false");
+            }
+        }
+
+        // Allow developers to toggle dark mode from the console
+        window.toggleDarkMode = toggleDarkMode;
+        window.toggleLightMode = toggleLightMode;
+
+    </script>
+</body>
+</html>
