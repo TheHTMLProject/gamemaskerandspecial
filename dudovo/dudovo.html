@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extras - The HTML Project</title>
+    <title>Dud OvO - Extras - The HTML Project</title>
     <link rel="icon" href="Icon.jpeg" type="image/jpeg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
@@ -18,6 +19,17 @@
             line-height: 1.6;
             transition: background-color 0.3s, color 0.3s;
         }
+		.container {
+    max-width: 900px;
+    margin: 3rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    text-align: center; /* This will center the text */
+    transition: background-color 0.3s, color 0.3s;
+}
+
         header {
             background-color: #1d3557;
             color: white;
@@ -82,19 +94,23 @@
         /* Body Links Styles (separate from light/dark mode) */
         .container a, .container p a {
             text-decoration: none;
+            text-decoration: none;
             transition: color 0.3s, transform 0.3s;
             position: relative;
+			 text-align: center; 
         }
 
         /* Light Mode Body Links */
         .light-mode .container a, .light-mode .container p a {
             color: #808080; /* Dark gray for visibility in light mode */
+			 text-align: center; 
         }
 
         /* Hover effect for body links in light mode */
         .light-mode .container a:hover, .light-mode .container p a:hover {
             color: #808080;
             transform: translateY(-2px);
+			 text-align: center; 
         }
 
         .light-mode .container a:active, .light-mode .container p a:active {
@@ -298,6 +314,129 @@ header nav a.header-option:active {
     background-color: #457b9d; /* Color when the link is pressed */
 }
 
+.dropdown {
+            position: relative;
+            display: inline-block;
+			font-family: 'Noto Sans', sans-serif;
+        }
+        .dropdown button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+			font-family: 'Noto Sans', sans-serif;
+        }
+        .dropdown button:hover {
+            background-color: #2980b9;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+/* Base button styles for both modes */
+.dropdown button {
+    background-color: transparent; /* No background, will match header background */
+    color: inherit; /* Inherit color from the header */
+    padding: 10px 20px;
+    border: none; /* Remove border */
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif; /* Override with Arial or any other font */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+/* Light mode - Button will have the same background as the header */
+body.light-mode .dropdown button {
+    background-color: #1d3557; /* Same as header background */
+    color: white; /* White text for visibility */
+	font-family: 'Noto Sans', sans-serif;
+}
+
+/* Dark mode - Button will have the same background as the header */
+body.dark-mode .dropdown button {
+    background-color: #333333; /* Dark background similar to header */
+    color: white; /* White text for visibility */
+}
+
+/* Dropdown text in light mode */
+.dropdown-content a {
+    color: black; /* Dark text for readability in light mode */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-family: 'Noto Sans', sans-serif; /* Set font to Arial or another font */
+}
+
+/* Dropdown text in dark mode */
+body.dark-mode .dropdown-content a {
+    color: #e0e0e0; /* Light gray text for readability in dark mode */
+font-family: 'Noto Sans', sans-serif;
+}
+
+/* Dropdown background in light mode */
+.dropdown-content {
+    background-color: white; /* White background in light mode */
+}
+
+/* Dropdown background in dark mode */
+body.dark-mode .dropdown-content {
+    background-color: #333333; /* Dark background in dark mode */
+}
+
+/* Dropdown hover effect */
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Light background on hover for light mode */
+}
+
+/* Dropdown hover effect in dark mode */
+body.dark-mode .dropdown-content a:hover {
+    background-color: #555555; /* Darker background on hover for dark mode */
+}
+
+/* Button hover effect */
+.dropdown button:hover {
+    background-color: #2980b9; /* Lighter color on hover (same as previous button hover) */
+    color: white; /* Ensuring color stays white during hover */
+}
+
+/* Hover effect for dark mode */
+body.dark-mode .dropdown button:hover {
+    background-color: #555555; /* Darker background when hovered in dark mode */
+}
+
+/* Focus and active button state */
+.dropdown button:focus, .dropdown button:active {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Custom focus effect */
+}
+
+
+
     </style>
 </head>
 <body>
@@ -306,27 +445,36 @@ header nav a.header-option:active {
             <img src="Icon.jpeg" alt="Icon">
             Extras
         </h1>
-        <nav>
-            <a href="/extras/index.html/">Home</a>
-           <s> <a href="#" style="pointer-events: none; ">Dud OvO</a></s>
-            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATcuH4ZUN1QyVUVFVzJGOVpYQzc3TVlSSlo1WEdBSS4u" target="_blank" rel="noopener noreferrer">Request a Masker Page</a>
-        </nav>
-    </header>
-    <div class="container">
-        <p>This website will automatically mask your games into about:blank windows so that your teacher will see "Google Classroom" or "Google." All you need is the link to the game, from my site or somewhere else. It's super cool! <a href="#">Request a new masker page</a> if you want the tab to say something else besides what is currently provided. Enjoy!</p>
-        <h2>Current Masker Pages</h2>
-        <div class="masker-pages">
-            <button>Google Classroom</button>
-            <button>Google</button>
+        <nav>				
+        <a href="index.html">Home</a>
+			<div class="dropdown">
+        <button class="dropdown-button">Game Masker</button>
+        <div class="dropdown-content">
+           
+            <a href="/extras/masker.html/">Game Masker</a>
+            <a href="https://forms.office.com/r/TWSEqQ7Hre" target="_blank">Request a Masker Page</a>
         </div>
+    </div>
+	<a href="https://forms.office.com/r/ckcj2miuf0">Sign Up for The Special Place</a>
+        </nav>
+ 
+    </header>
+	
+    <div class="container">
+        
         <h2>Dud OvO</h2>
-        <p>See the older version, the one before the above idea. If you like OvO, this is for you. <a href="#">Click here</a></p>
+		<p>It's just basically what is on the homepage, but older. Made just for OvO. Click the name you want to use as the mask.</p>
+        <div class="masker-pages">
+            <button class="btn btn-success" onclick="location.href='https://www.dropbox.com/scl/fo/hdprkp7jb8glxm0hx5kax/h?rlkey=p7xkjrfc5lv2ph8yfsvutfmya&e=1&dl=1';">Core Period 1-2</button>
+            <button class="btn btn-success" onclick="location.href='https://www.dropbox.com/scl/fo/gkx72vie0je97nyqx6jyb/h?rlkey=fb9rwvf0ur1p2yj6wcg38b0ms&e=1&dl=1';">Other Classes (Google Classroom)</button>
+			<button class="btn btn-success" onclick="location.href='https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATcuH4ZUNlBSM05CQjRRSlZEV0VTSENUVFdVUDRLTS4u';">Request a Class</button>
+        </div>
+       
     </div>
     <footer>
         <p>Made with <span style="color: #e63946;">💚</span> by Asher from The HTML Project</p>
 		<p><a href="/home/">Back to Dashboard</a></p>
-        <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATcuH4ZUN1QyVUVFVzJGOVpYQzc3TVlSSlo1WEdBSS4u">Report a Bug</a></p>
-		
+        <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATcuH4ZUN1owVTQ0RzBHMVJVUDlMVUc5MzdaNENHMi4u">Report a bug</a></p>
     </footer>
 
     <script>
