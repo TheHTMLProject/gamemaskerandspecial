@@ -1,15 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dud OvO - Extras - The HTML Project</title>
-    <link rel="icon" href="/extras/Icon.jpeg" type="image/jpeg">
+    <title>Dud OvO - Deprecated - The HTML Project</title>
+    <link rel="icon" href="https://assets.thehtmlproject.com/icon.jpeg" type="image/jpeg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
-        /* Base Light Mode Styles */
         body {
             font-family: 'Noto Sans', sans-serif;
             margin: 0;
@@ -26,7 +24,7 @@
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    text-align: center; /* This will center the text */
+    text-align: center;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -52,9 +50,8 @@
             margin-right: 12px;
         }
 
-        /* Header Links in Light Mode */
         header nav a {
-            color: #f1faee;  /* Light color for visibility in light mode */
+            color: #f1faee;
             text-decoration: none;
             margin-left: 1.5rem;
             font-size: 1rem;
@@ -63,9 +60,8 @@
             padding: 0.5rem;
         }
 
-        /* Hover effect for header links */
         header nav a:hover {
-            color: #a8dadc;  /* Lighter hover effect */
+            color: #a8dadc;
             transform: translateY(-2px);
         }
 
@@ -91,22 +87,18 @@
             transform-origin: left;
         }
 
-        /* Body Links Styles (separate from light/dark mode) */
         .container a, .container p a {
-            text-decoration: none;
             text-decoration: none;
             transition: color 0.3s, transform 0.3s;
             position: relative;
 			 text-align: center; 
         }
 
-        /* Light Mode Body Links */
         .light-mode .container a, .light-mode .container p a {
-            color: #808080; /* Dark gray for visibility in light mode */
+            color: #808080;
 			 text-align: center; 
         }
 
-        /* Hover effect for body links in light mode */
         .light-mode .container a:hover, .light-mode .container p a:hover {
             color: #808080;
             transform: translateY(-2px);
@@ -135,7 +127,6 @@
             transform-origin: left;
         }
 
-        /* Dark Mode Styles */
         body.dark-mode {
             background-color: #121212;
             color: #e0e0e0;
@@ -171,12 +162,10 @@
             transform: scale(1.1);
         }
 
-        /* Specific Styles for the "Request a new masker page" link in dark mode */
         .dark-mode .container p a {
-            color: #ffffff; /* Dark blue color for the "Request a new masker page" link */
+            color: #ffffff;
         }
 
-        /* Hover effect for the "Request a new masker page" link in dark mode */
         .dark-mode .container p a:hover {
             color: #808080;
             transform: translateY(-2px);
@@ -246,7 +235,6 @@
             box-shadow: 0 2px 6px rgba(42, 157, 143, 0.2);
         }
 
-        /* Footer Links */
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -293,7 +281,7 @@
             transform: scaleX(1);
             transform-origin: left;
         }
-/* Header Links */
+
 header nav a.header-option {
     color: #f1faee;
     text-decoration: none;
@@ -306,12 +294,11 @@ header nav a.header-option {
     border-radius: 5px;
 }
 
-/* Pushed-in effect when the link is pressed */
 header nav a.header-option:active {
     color: #a8dadc;
     transform: translateY(2px);
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
-    background-color: #457b9d; /* Color when the link is pressed */
+    background-color: #457b9d;
 }
 
 .dropdown {
@@ -355,113 +342,78 @@ header nav a.header-option:active {
         .dropdown:hover .dropdown-content {
             display: block;
         }
-/* Base button styles for both modes */
+
 .dropdown button {
-    background-color: transparent; /* No background, will match header background */
-    color: inherit; /* Inherit color from the header */
+    background-color: transparent;
+    color: inherit;
     padding: 10px 20px;
-    border: none; /* Remove border */
+    border: none;
     cursor: pointer;
     font-size: 16px;
-    font-family: 'Arial', sans-serif; /* Override with Arial or any other font */
+    font-family: 'Arial', sans-serif;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
 	font-family: 'Noto Sans', sans-serif;
 }
 
-/* Light mode - Button will have the same background as the header */
 body.light-mode .dropdown button {
-    background-color: #1d3557; /* Same as header background */
-    color: white; /* White text for visibility */
+    background-color: #1d3557;
+    color: white;
 	font-family: 'Noto Sans', sans-serif;
 }
 
-/* Dark mode - Button will have the same background as the header */
 body.dark-mode .dropdown button {
-    background-color: #333333; /* Dark background similar to header */
-    color: white; /* White text for visibility */
+    background-color: #333333;
+    color: white;
 }
 
-/* Dropdown text in light mode */
 .dropdown-content a {
-    color: black; /* Dark text for readability in light mode */
+    color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     transition: background-color 0.3s ease;
-    font-family: 'Noto Sans', sans-serif; /* Set font to Arial or another font */
+    font-family: 'Noto Sans', sans-serif;
 }
 
-/* Dropdown text in dark mode */
 body.dark-mode .dropdown-content a {
-    color: #e0e0e0; /* Light gray text for readability in dark mode */
+    color: #e0e0e0;
 font-family: 'Noto Sans', sans-serif;
 }
 
-/* Dropdown background in light mode */
 .dropdown-content {
-    background-color: white; /* White background in light mode */
+    background-color: white;
 }
 
-/* Dropdown background in dark mode */
 body.dark-mode .dropdown-content {
-    background-color: #333333; /* Dark background in dark mode */
+    background-color: #333333;
 }
 
-/* Dropdown hover effect */
 .dropdown-content a:hover {
-    background-color: #f1f1f1; /* Light background on hover for light mode */
+    background-color: #f1f1f1;
 }
 
-/* Dropdown hover effect in dark mode */
 body.dark-mode .dropdown-content a:hover {
-    background-color: #555555; /* Darker background on hover for dark mode */
+    background-color: #555555;
 }
 
-/* Button hover effect */
 .dropdown button:hover {
-    background-color: #2980b9; /* Lighter color on hover (same as previous button hover) */
-    color: white; /* Ensuring color stays white during hover */
+    background-color: #2980b9;
+    color: white;
 }
 
-/* Hover effect for dark mode */
 body.dark-mode .dropdown button:hover {
-    background-color: #555555; /* Darker background when hovered in dark mode */
+    background-color: #555555;
 }
 
-/* Focus and active button state */
 .dropdown button:focus, .dropdown button:active {
-    outline: none; /* Remove default focus outline */
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5); /* Custom focus effect */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
-
-
-
     </style>
 </head>
 <body>
-    <header>
-        <h1>
-            <img src="/extras/Icon.jpeg" alt="Icon">
-            Extras
-        </h1>
-        <nav>				
-        <a href="/extras/index.html">Home</a>
-			<div class="dropdown">
-        <button class="dropdown-button">Game Masker</button>
-        <div class="dropdown-content">
-           
-            <a href="/extras/masker.html">Game Masker</a>
-            <a href="https://forms.office.com/r/TWSEqQ7Hre" target="_blank">Request a Masker Page</a>
-        </div>
-    </div>
-	<a href="https://forms.office.com/r/ckcj2miuf0">Sign Up for The Special Place</a>
-        </nav>
- 
-    </header>
-	
     <div class="container">
-        
         <h2>Dud OvO</h2>
 		<p>It's just basically what is on the homepage, but older. Made just for OvO. Click the name you want to use as the mask.</p>
         <div class="masker-pages">
@@ -477,23 +429,16 @@ body.dark-mode .dropdown button:hover {
 		<br><br><br><br><br><br>
 		</div>
 		</div>
-    <footer>
-        <p>Made with <span style="color: #e63946;">💚</span> by Asher from The HTML Project</p>
-		<p><a href="/home/">Back to Dashboard</a></p>
-        <p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAATcuH4ZUN1owVTQ0RzBHMVJVUDlMVUc5MzdaNENHMi4u">Report a bug</a></p>
-    </footer>
-
+    
     <script>
-        // Check if dark mode is enabled in localStorage
         if (localStorage.getItem("darkMode") === "true") {
             enableDarkMode();
         }
 
-        // Toggle Dark Mode
         function toggleDarkMode() {
             const body = document.body;
             body.classList.toggle('dark-mode');
-            body.classList.remove('light-mode');  // Ensure light mode is not active
+            body.classList.remove('light-mode');
             if (body.classList.contains('dark-mode')) {
                 localStorage.setItem("darkMode", "true");
             } else {
@@ -501,16 +446,14 @@ body.dark-mode .dropdown button:hover {
             }
         }
 
-        // Enable Dark Mode
         function enableDarkMode() {
             document.body.classList.add('dark-mode');
         }
 
-        // Toggle Light Mode
         function toggleLightMode() {
             const body = document.body;
             body.classList.toggle('light-mode');
-            body.classList.remove('dark-mode');  // Ensure dark mode is not active
+            body.classList.remove('dark-mode');
             if (body.classList.contains('light-mode')) {
                 localStorage.setItem("lightMode", "true");
             } else {
@@ -518,10 +461,15 @@ body.dark-mode .dropdown button:hover {
             }
         }
 
-        // Allow developers to toggle dark mode from the console
         window.toggleDarkMode = toggleDarkMode;
         window.toggleLightMode = toggleLightMode;
 
+        // Global Deprecated Message
+        const alertKey = 'alertShown';
+        if (!localStorage.getItem(alertKey)) {
+            alert('This page is deprecated. It is old work that has either been replaced by something else or decided that it will not (for now) be a feature on my website. Please visit https://thehtmlproject.com for the main site. Thanks!');
+            localStorage.setItem(alertKey, 'true');
+        }
     </script>
 </body>
 </html>
